@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Save the candidate's name
         localStorage.setItem("candidateName", name);
+        const questionCount = document.querySelectorAll("select")[1].value;
+
+localStorage.setItem("questionCount", questionCount);
 
         // Open the exam page
         window.location.href = "exam.html";
