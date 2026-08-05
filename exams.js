@@ -2,7 +2,9 @@ let currentQuestion = 0;
 let score = 0;
 let timeLeft = 30 * 60;
 
-let selectedQuestions = questions;
+let selectedQuestions = [...questions]
+.sort(() => Math.random() - 0.5)
+.slice(0, 30);
 
 function loadQuestion(){
 
