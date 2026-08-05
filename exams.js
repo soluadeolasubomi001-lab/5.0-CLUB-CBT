@@ -93,3 +93,11 @@ window.onload = function(){
     }
 
 };
+const candidate = localStorage.getItem("candidateName");
+
+if(candidate){
+
+    document.getElementById("candidateName").innerHTML =
+        "Candidate: " + candidate;
+
+            }
