@@ -1,5 +1,6 @@
 let currentQuestion = 0;
 let score = 0;
+let timeLeft = 30 * 60;
 
 let selectedQuestions = questions;
 
@@ -55,6 +56,26 @@ function nextQuestion(){
     }
 
 }
+function startTimer() {
+
+    const timer = document.getElementById("timer");
+
+    setInterval(function () {
+
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        timer.innerHTML = "Time Left: " + minutes + ":" + seconds;
+
+        timeLeft--;
+
+    }, 1000);
+
+       }
 
 
 window.onload = function(){
@@ -62,6 +83,12 @@ window.onload = function(){
     if(document.getElementById("exam")){
 
         loadQuestion();
+
+        startTimer();
+
+    }
+
+};
 
     }
 
