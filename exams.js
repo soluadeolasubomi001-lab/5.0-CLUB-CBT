@@ -91,10 +91,6 @@ window.onload = function(){
     }
 
 };
-
-    }
-
-};
 const candidate = localStorage.getItem("candidateName");
 
 if(candidate){
