@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Save the candidate's name
         localStorage.setItem("candidateName", name);
         const questionCount = document.querySelectorAll("select")[1].value;
+        const examTime = document.querySelectorAll("select")[0].value;
+
+localStorage.setItem("examTime", examTime);
 
 localStorage.setItem("questionCount", questionCount);
 
