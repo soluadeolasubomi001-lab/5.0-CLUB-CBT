@@ -17,10 +17,10 @@ function loadQuestion(){
 
         <p>${q.question}</p>
 
-        ${q.options.map(option => 
-        `<button onclick="checkAnswer('${option}')">
-        ${option}
-        </button>`).join("")}
+        ${q.options.map((option, index) => 
+`<button onclick="checkAnswer(${index})">
+${option}
+</button>`).join("")}
 
         <br><br>
 
@@ -30,14 +30,6 @@ function loadQuestion(){
 
 
 function checkAnswer(answer){
-
-    let correct = selectedQuestions[currentQuestion].answer;
-
-    if(answer === correct){
-        score++;
-    }
-
-}
 
 
 function nextQuestion(){
@@ -50,7 +42,15 @@ function nextQuestion(){
 
     }else{
 
-        alert(
+        function checkAnswer(selectedIndex){
+
+    let correct = selectedQuestions[currentQuestion].answer;
+
+    if(selectedIndex === correct){
+        score++;
+    }
+
+                                          }rt(
         "Exam Completed!\nYour Score: " 
         + score + "/" + selectedQuestions.length
         );
