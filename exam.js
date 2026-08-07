@@ -1,6 +1,8 @@
 let currentQuestion = 0;
 let score = 0;
-let timeLeft = 30 * 60;
+
+let examTime = localStorage.getItem("examTime") || 30;
+let timeLeft = parseInt(examTime) * 60;
 
 let selectedQuestions = [...questions]
 .sort(() => Math.random() - 0.5)
